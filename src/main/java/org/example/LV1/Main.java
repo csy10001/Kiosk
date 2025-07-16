@@ -1,5 +1,6 @@
 package org.example.LV1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -15,13 +16,30 @@ public class Main {
             System.out.println(hambergerMenu[i]);
         }
         System.out.print("원하시는 정보의 번호를 입력해주세요 : ");
-        int choice = scanner.nextInt();
-        while (choice != 0) {
-            System.out.println(hambergerMenu[choice]);
-            System.out.println("다른 정보가 필요하시면 번호를 입력해주세요");
-            choice = scanner.nextInt();
+        int choice = 0;
+
+        while (true) {
+            try {
+                choice = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("잘못 입력하셨습니다.");
+                System.out.print("다시 입력해주세요 : ");
+                scanner.nextLine();
+                continue;
+            }
+
+            if (choice == 0) {
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            } else if (1 <= choice && choice < hambergerMenu.length) {
+                System.out.println(hambergerMenu[choice]);
+                System.out.print("다른 정보가 필요하시면 번호를 입력해주세요 : ");
+            } else {
+                System.out.println("숫자를 잘못 입력하셨습니다.");
+                System.out.print("다시 입력해 주십시오 : ");
+            }
         }
-        System.out.println("프로그램을 종료합니다.");
+        scanner.close();
 
     }
 }
