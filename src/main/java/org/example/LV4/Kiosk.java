@@ -33,25 +33,26 @@ class Kiosk {
             }
 
             Menu selectedMenu = menus.get(mainChoice - 1);
-            System.out.println("[ " + selectedMenu.getName() + " MENU ]");
-            selectedMenu.displayMenuItems();
 
-            System.out.print("번호 입력: ");
-            int itemChoice = scanner.nextInt();
+            while(true){
+                System.out.println("[ " + selectedMenu.getName() + " MENU ]");
+                selectedMenu.displayMenuItems();
 
-            if (itemChoice == 0) {
-                continue;
+                System.out.print("번호 입력: ");
+                int itemChoice = scanner.nextInt();
+
+                if (itemChoice == 0) {
+                    break;
+                }
+                List<MenuItem> items = selectedMenu.getMenuItems();
+                if (itemChoice < 1 || itemChoice > items.size()) {
+                    System.out.println("잘못된 입력입니다.");
+                    continue;
+                }
+                MenuItem selectedItem = items.get(itemChoice - 1);
+                System.out.println("선택된 메뉴 : " + selectedItem.getName() + " | " + "W " + selectedItem.getPrice() + " | " + selectedItem.getInfo());
+
             }
-
-            List<MenuItem> items = selectedMenu.getMenuItems();
-            if (itemChoice < 1 || itemChoice > items.size()) {
-                System.out.println("잘못된 입력입니다.");
-                continue;
-            }
-
-            MenuItem selectedItem = items.get(itemChoice - 1);
-            System.out.printf("선택한 메뉴: %s | W %.1f | %s%n",
-                    selectedItem.getName(), selectedItem.getPrice(), selectedItem.getInfo());
         }
     }
 }

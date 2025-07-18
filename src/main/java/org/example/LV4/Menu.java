@@ -26,7 +26,7 @@ class Menu {
     public void displayMenuItems() {
         for (int i = 0; i < menuItems.size(); i++) {
             MenuItem item = menuItems.get(i);
-            System.out.printf("%d. %-15s | W %.1f | %s%n", i + 1, item.getName(), item.getPrice(), item.getInfo());
+            System.out.println((i+1) + ". " + item.getName() + " | " + "W " + item.getPrice() + " | " + item.getInfo());
         }
         System.out.println("0. 뒤로가기");
     }
