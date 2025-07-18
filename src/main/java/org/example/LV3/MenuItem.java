@@ -1,4 +1,4 @@
-package org.example.LV2;
+package org.example.LV3;
 
 class MenuItem {
     private int number;
@@ -13,6 +13,7 @@ class MenuItem {
         this.bugerInfo = bugerInfo;
     }
     public int getNumber() {
+
         return number;
     }
     public String getName() {
@@ -20,13 +21,17 @@ class MenuItem {
         return name;
     }
     public double getPrice() {
+
         return price;
     }
     public String getBugerInfo() {
 
         return bugerInfo;
     }
+
+    @Override
     public String toString() {
+
         return number + ". " + name + " | " + "W " + price + " | " + bugerInfo;
     }
 }
