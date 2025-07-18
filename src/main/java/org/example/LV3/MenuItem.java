@@ -6,11 +6,11 @@ class MenuItem {
     private double price;
     private String bugerInfo;
 
-    public MenuItem(int number, String name, double price, String bugerInfo) {
+    public MenuItem(int number, String name, double price, String burgerInfo) {
         this.number = number;
         this.name = name;
         this.price = price;
-        this.bugerInfo = bugerInfo;
+        this.bugerInfo = burgerInfo;
     }
     public int getNumber() {
 
