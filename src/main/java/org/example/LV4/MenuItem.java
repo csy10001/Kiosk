@@ -1,9 +1,9 @@
 package org.example.LV4;
 
 class MenuItem {
-    private String name;
-    private double price;
-    private String info;
+    private final String name;
+    private final double price;
+    private final String info;
 
     public MenuItem(String name, double price, String info) {
         this.name = name;

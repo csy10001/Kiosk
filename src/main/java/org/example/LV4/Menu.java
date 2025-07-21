@@ -1,5 +1,6 @@
 package org.example.LV4;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 class Menu {
@@ -20,7 +21,7 @@ class Menu {
     }
 
     public List<MenuItem> getMenuItems() {
-        return menuItems;
+        return Collections.unmodifiableList(menuItems); // 일기 전용으로 바꾼다고 한다.
     }
 
     public void displayMenuItems() {

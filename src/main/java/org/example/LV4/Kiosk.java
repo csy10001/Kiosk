@@ -1,4 +1,5 @@
 package org.example.LV4;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ class Kiosk {
     private List<Menu> menus;
 
     public Kiosk(List<Menu> menus) {
-        this.menus = menus;
+        this.menus = Collections.unmodifiableList(menus); // 읽기 전용으로 바꾼다고 하는데...
     }
 
     public void start() {
