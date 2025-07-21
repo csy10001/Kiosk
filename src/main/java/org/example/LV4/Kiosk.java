@@ -14,11 +14,13 @@ class Kiosk {
     public void start() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("[ MAIN MENU ]");
+            System.out.println("  ╔═ ═══ ═══ ═══ ═══ ═══ ═══ ═══ ═╗");
+            System.out.println("        ***   메인 메뉴  ***       ");
+            System.out.println("  ╚═ ═══ ═══ ═══ ═══ ═══ ═══ ═══ ═╝");
             for (int i = 0; i < menus.size(); i++) {
                 System.out.println( (i + 1) + ". " + menus.get(i).getName());
             }
-            System.out.println("0. 종료      | 종료");
+            System.out.println("0. 종료");
 
             System.out.print("번호 입력: ");
             int mainChoice = scanner.nextInt();
@@ -36,7 +38,9 @@ class Kiosk {
             Menu selectedMenu = menus.get(mainChoice - 1);
 
             while(true){
-                System.out.println("[ " + selectedMenu.getName() + " MENU ]");
+                System.out.println("  ╔═ ═══ ═══ ═══ ═══ ═══ ═══ ═══ ═╗");
+                System.out.println("            " + selectedMenu.getName() + " MENU ");
+                System.out.println("  ╚═ ═══ ═══ ═══ ═══ ═══ ═══ ═══ ═╝");
                 selectedMenu.displayMenuItems();
 
                 System.out.print("번호 입력: ");
